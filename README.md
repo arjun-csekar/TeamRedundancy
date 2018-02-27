@@ -55,7 +55,6 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Mallards who lose their life every year to roundabouts.
+
 
