@@ -19,9 +19,6 @@ git clone https://github.com/arjun-csekar/TeamRedundancy
 ### Prerequisites
 
 Computer needed.
-```
-Give examples
-```
 
 ### Installing and Deployment
 
