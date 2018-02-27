@@ -1,6 +1,8 @@
 # TeamRedundancy
 # DUCK MESSAGING SERVICE
 
+![alt text] (https://www.shareicon.net/data/512x512/2016/04/30/757823_face_512x512.png)
+
 Desktop communication application that will allow users to send
 text messages to each other or to groups. In addition to instant messaging, it will allow
 users to exchange media such as images and video. The UI will be made simple inorder
