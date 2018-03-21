@@ -11,6 +11,8 @@ int main(){
 	char msg1[256] = "This is client";
 	client_socket = socket(AF_INET, SOCK_STREAM, 0);
 	
+	//placeholder for client network
+	
 	struct sockaddr_in server_address;
 	server_address.sin_family = AF_INET;
 	server_address.sin_port = htons(9009);
