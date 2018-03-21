@@ -9,6 +9,8 @@ int main(){
 	char msg[256] = "This is server";
 	char msg1[256];
 	
+	//Placeholder for multiclient
+	
 	int server_socket, client_socket;
 	
 	server_socket = socket(AF_INET, SOCK_STREAM, 0);
