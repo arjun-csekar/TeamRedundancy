@@ -7,6 +7,7 @@ LoginWindow::LoginWindow(QWidget *parent) :
     ui(new Ui::LoginWindow)
 {
     ui->setupUi(this);
+    ui->stackedWidget->setCurrentIndex(0);
 
 }
 
@@ -15,9 +16,12 @@ LoginWindow::~LoginWindow()
     delete ui;
 }
 
-void LoginWindow::on_SignUpButton_clicked()
+void LoginWindow::on_LoginSignUpButton_clicked()
 {
-    hide();
-    newuser = new NewUserWindow(this);
-    newuser->show();
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void LoginWindow::on_NewSignUpButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
 }

@@ -2,7 +2,6 @@
 #define LOGINWINDOW_H
 
 #include <QMainWindow>
-#include "newuserwindow.h"
 
 namespace Ui {
 class LoginWindow;
@@ -17,11 +16,13 @@ public:
     ~LoginWindow();
 
 private slots:
-    void on_SignUpButton_clicked();
+
+    void on_LoginSignUpButton_clicked();
+
+    void on_NewSignUpButton_clicked();
 
 private:
     Ui::LoginWindow *ui;
-    NewUserWindow *newuser;
 };
 
 #endif // LOGINWINDOW_H
