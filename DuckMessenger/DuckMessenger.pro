@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -35,3 +35,9 @@ FORMS += \
 
 RESOURCES += \
     resource.qrc
+
+
+win32: LIBS += -L$$PWD/../mysql-connector-c-6.1.11-winx64/lib/ -llibmysql
+
+INCLUDEPATH += $$PWD/../mysql-connector-c-6.1.11-winx64/include
+DEPENDPATH += $$PWD/../mysql-connector-c-6.1.11-winx64/include
