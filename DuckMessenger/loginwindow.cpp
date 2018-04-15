@@ -30,15 +30,47 @@ void LoginWindow::on_LoginSignUpButton_clicked()
 
 void LoginWindow::on_NewSignUpButton_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(0);
+    QString username = ui->NewUserNameBox->toPlainText();
+    QString password = ui->NewPasswordBox->toPlainText();
+    QString password2 = ui->NewPasswordBoxRe->toPlainText();
+
+    if (password == password2) {
+        if (db.open()) {
+            QSqlQuery query;
+            query.prepare("INSERT INTO userprofile (userName, password) " "VALUES (:un, :pw)");
+            query.bindValue(":un", username);
+            query.bindValue(":pw", password);
+            query.exec();
+        } else {
+            qDebug() << "Failed to connect to database";
+            qDebug() << db.lastError();
+        }
+        ui->stackedWidget->setCurrentIndex(0);
+    } else {
+
+        ui->NewUserNameBox->setPlainText("STOP");
+
+    }
 }
 
 void LoginWindow::on_LoginSignInButton_clicked()
 {
+    QString username = ui->LoginUserNameBox->toPlainText();
+    QString password = ui->LoginPasswordBox->toPlainText();
     if (db.open()) {
-        //query.exec("INSERT INTO ");
-    } else {
-        qDebug() << "Failed to connect to database";
-        qDebug() << db.lastError();
+        QSqlQuery query;
+        query.prepare("SELECT * FROM userprofile WHERE userName=:un");
+        query.bindValue(":un", username);
+        query.exec();
+
+        qDebug() << query.first();
+
+        if (password != query.value("password")) {
+            ui->LoginUserNameBox->setPlainText("WRONG");
+        } else {
+            ui->stackedWidget->setCurrentIndex(2);
+        }
     }
+
+
 }

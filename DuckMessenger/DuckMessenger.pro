@@ -37,7 +37,7 @@ RESOURCES += \
     resource.qrc
 
 
-win32: LIBS += -L$$PWD/../mysql-connector-c-6.1.11-winx64/lib/ -llibmysql
+win32: LIBS += -L$$PWD/../mysql-connector-c-6.1.11-win32/lib/ -llibmysql
 
-INCLUDEPATH += $$PWD/../mysql-connector-c-6.1.11-winx64/include
-DEPENDPATH += $$PWD/../mysql-connector-c-6.1.11-winx64/include
+INCLUDEPATH += $$PWD/../mysql-connector-c-6.1.11-win32/include
+DEPENDPATH += $$PWD/../mysql-connector-c-6.1.11-win32/include
