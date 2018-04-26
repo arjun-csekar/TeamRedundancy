@@ -57,6 +57,7 @@ void LoginWindow::on_LoginSignInButton_clicked()
 {
     QString username = ui->LoginUserNameBox->toPlainText();
     QString password = ui->LoginPasswordBox->toPlainText();
+
     if (db.open()) {
         QSqlQuery query;
         query.prepare("SELECT * FROM userprofile WHERE userName=:un");
@@ -73,4 +74,14 @@ void LoginWindow::on_LoginSignInButton_clicked()
     }
 
 
+}
+
+void LoginWindow::on_Logout_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}
+
+void LoginWindow::on_Send_clicked()
+{
+    ui->ChatBox->setText(ui->ChatBox->text() + "\n" + ui->ChatText->toPlainText());
 }

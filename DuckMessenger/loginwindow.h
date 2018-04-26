@@ -19,6 +19,9 @@ private slots:
     void on_LoginSignUpButton_clicked();
     void on_NewSignUpButton_clicked();
     void on_LoginSignInButton_clicked();
+    void on_Logout_clicked();
+
+    void on_Send_clicked();
 
 private:
     Ui::LoginWindow *ui;
